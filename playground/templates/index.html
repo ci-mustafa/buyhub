@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playgournd</title>
+</head>
+<body>
+    <h1>Playgorund app</h1>
+    <h2>Type your name and submit!</h2>
+    <form method="POST">
+        {% csrf_token %}
+    <label for="username">Username: </label>
+    <input type="text" name="username" id="username" placeholder="Username" required>
+    <input type="submit" value="Submit" id="submit">
+    </form>
+    {% if username %}
+    {% if username == 'mustafa' %}
+    <h3>Hello {{ username }}!</h3>
+    <p>You know already about Django!</p>
+    {% else %}
+    <h3>Hello {{ username }}!</h3>
+    <p>You are going to learn Django!</p>
+    {% endif %}
+    {% endif %}
+</body>
+</html>
